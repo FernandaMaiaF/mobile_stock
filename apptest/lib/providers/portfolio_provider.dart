@@ -28,7 +28,6 @@ class PortfolioProvider {
   }
   static Future<RequestControlProvider> getPortfolio() async {
     bool requestSuccess = true;
-    bool connectionFailed = false;
     String? errorMsg;
     PortfolioProvider? portfolioContent;
 
@@ -62,13 +61,11 @@ class PortfolioProvider {
       }
     } catch (e) {
       requestSuccess = false;
-      connectionFailed = true;
       errorMsg = e.toString();
     }
 
     return RequestControlProvider(
       requestSuccess: requestSuccess,
-      connectionFailed: connectionFailed,
       errorMsg: errorMsg,
       response: portfolioContent,
     );

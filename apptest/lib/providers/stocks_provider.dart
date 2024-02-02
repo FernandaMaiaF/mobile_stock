@@ -82,7 +82,6 @@ class StocksProvider {
 
   static Future<RequestControlProvider> getStock(String symbol) async {
     bool requestSuccess = true;
-    bool connectionFailed = false;
     String? errorMsg;
     StocksProvider? stocksContent;
 
@@ -119,13 +118,11 @@ class StocksProvider {
       }
     } catch (e) {
       requestSuccess = false;
-      connectionFailed = true;
       errorMsg = e.toString();
     }
 
     return RequestControlProvider(
       requestSuccess: requestSuccess,
-      connectionFailed: connectionFailed,
       errorMsg: errorMsg,
       response: stocksContent,
     );

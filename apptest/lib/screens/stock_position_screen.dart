@@ -89,6 +89,7 @@ class _StockPositionScreenState extends State<StockPositionScreen> {
           : RefreshIndicator(
               onRefresh: () => _loadRequiredData(),
               child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
                 child: (stock == null)
                     ? const Center(child: Text('No data'))
                     : Padding(
@@ -125,7 +126,7 @@ class _StockPositionScreenState extends State<StockPositionScreen> {
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text('Last price: ${stock!.quantity} stocks(${stock!.currency})'),
+                                  child: Text('Last price: \$${position!.lastPrice}'),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),

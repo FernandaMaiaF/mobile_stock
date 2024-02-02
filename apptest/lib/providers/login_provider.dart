@@ -15,7 +15,6 @@ class LoginProvider {
 
   static Future<RequestControlProvider> login({required String email, required String password}) async {
     bool requestSuccess = true;
-    bool connectionFailed = false;
     String? errorMsg;
     String? responseToken;
     final accessControl = AccessControlProvider();
@@ -59,13 +58,11 @@ class LoginProvider {
       }
     } catch (e) {
       requestSuccess = false;
-      connectionFailed = true;
       errorMsg = e.toString();
     }
 
     return RequestControlProvider(
       requestSuccess: requestSuccess,
-      connectionFailed: connectionFailed,
       errorMsg: errorMsg,
       response: responseToken,
     );

@@ -75,6 +75,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
           : RefreshIndicator(
               onRefresh: () => _loadRequiredData(),
               child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
                 child: (portfolio == null)
                     ? const Center(child: Text('No data'))
                     : Column(
@@ -127,6 +128,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                           (portfolio!.positions == null)
                               ? const Center(child: Text('No data'))
                               : ListView.separated(
+                                  physics: const NeverScrollableScrollPhysics(),
                                   shrinkWrap: true,
                                   padding: const EdgeInsets.all(8),
                                   separatorBuilder: (ctx, i) => const Divider(),
