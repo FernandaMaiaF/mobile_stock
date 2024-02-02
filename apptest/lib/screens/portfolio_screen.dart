@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:apptest/screens/stock_position_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -47,7 +45,6 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
         _isLoading = false;
         portfolio = requestResponse.response;
       });
-      inspect(portfolio);
     }
   }
 

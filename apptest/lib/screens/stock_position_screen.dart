@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -51,7 +50,6 @@ class _StockPositionScreenState extends State<StockPositionScreen> {
         _isLoading = false;
         stock = requestResponse.response;
       });
-      inspect(stock);
     }
   }
 
@@ -96,7 +94,6 @@ class _StockPositionScreenState extends State<StockPositionScreen> {
                     : Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
-                          // mainAxisSize: MainAxisSize.min,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.center,

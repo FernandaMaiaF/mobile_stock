@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 // ignore: depend_on_referenced_packages
@@ -111,8 +110,6 @@ class StocksProvider {
         requestSuccess = true;
         if (responseData != null) {
           stocksContent = StocksProvider.fromDetailedJson(responseData);
-
-          inspect(stocksContent);
         }
       } else {
         requestSuccess = false;
